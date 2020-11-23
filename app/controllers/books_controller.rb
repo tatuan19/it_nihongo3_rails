@@ -1,5 +1,8 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  
+  # Allow access only to logged-in users:
+  before_action :authenticate_user!
 
   # GET /books
   # GET /books.json
